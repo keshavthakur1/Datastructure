@@ -1,0 +1,31 @@
+#LinearSearch
+#include <stdio.h>
+#include <stdlib.h>
+
+struct Array {
+    int A[20];
+    int size;
+    int length;
+};
+
+int LinearSearch(struct Array arr, int key) {
+    for (int i = 0; i < arr.length; i++) {
+        if (key == arr.A[i])
+            return i;
+    }
+    return -1;
+}
+
+int main() {
+    struct Array arr = {{2, 3, 45, 67, 78, 8}, 10, 6}; // Initialize the array with correct values
+
+    printf("Index of key 8: %d\n", LinearSearch(arr, 8));
+
+    printf("Array: ");
+    for (int i = 0; i < arr.length; i++) {
+        printf("%d ", arr.A[i]);
+    }
+    printf("\n");
+
+    return 0;
+}
